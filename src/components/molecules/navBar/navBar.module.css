@@ -1,0 +1,14 @@
+.container_NabBar{
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+}
+
+.container_buttons_navBar{
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+}

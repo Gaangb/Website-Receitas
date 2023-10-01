@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import axios from 'axios'
+import {NavBar} from './components/molecules/navBar'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [recipe, setRecipe] = useState("")
+  // const [recipe, setRecipe] = useState("")
 
   async function getRecipe(){
     try {
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      {getRecipe()}
+      <NavBar />
     </>
   )
 }

@@ -1,10 +1,10 @@
-import styles from "./button.module.css"
+import styles from "./button.module.css";
 
 interface ButtonProps {
-    text: string
-    customClass?: string
+  text: string;
+  customClass?: string;
 }
 
-export default function Button({text, customClass}: ButtonProps){
-    return <button className={`${styles}.${customClass}`}>{text}</button>
+export function Button({ text, customClass }: ButtonProps) {
+  return <button className={`${styles}.${customClass}`}>{text}</button>;
 }
