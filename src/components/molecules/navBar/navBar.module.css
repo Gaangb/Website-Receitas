@@ -3,9 +3,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     margin: auto;
-    background-color: #303030;
+    background-color: #342316;
 }
 
 .container_NabBar > div > h1 {
