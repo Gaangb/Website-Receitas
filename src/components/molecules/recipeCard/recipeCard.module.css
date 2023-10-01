@@ -1,0 +1,9 @@
+.container_recipeCard{
+    display: flex;
+}
+
+.container_recipeCard > div > img{
+    width: 30vw;
+
+}
+
