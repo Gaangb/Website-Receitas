@@ -1,11 +1,17 @@
 .container_NabBar{
-    width: 90vw;
+    max-width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     margin: auto;
+    background-color: #303030;
 }
+
+.container_NabBar > div > h1 {
+    background-color: transparent;
+}
+
 
 .container_buttons_navBar{
     display: flex;
