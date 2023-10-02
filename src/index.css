@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
 }
 
 body{
   background-color: #d4bfb3;
   overflow: hidden;
+  color: rgba(255, 255, 255, 0.87);
 }
