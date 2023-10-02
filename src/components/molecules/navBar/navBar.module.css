@@ -6,7 +6,7 @@
     padding: 20px;
     margin: auto;
     background-color: #342316;
-    height: 5vh;
+    height: 2vh;
 }
 
 .container_NabBar > div > h1 {
@@ -17,5 +17,5 @@
 .container_buttons_navBar{
     display: flex;
     justify-content: space-between;
-    width: 40vw;
+    max-width: 50vw;
 }
