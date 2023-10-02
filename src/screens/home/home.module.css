@@ -2,12 +2,27 @@
     max-width: 100vw;
     display: flex;
     justify-content: space-between;
+    color: #342316;
+    font-size: 20px;
 }
 
 .card_home{
     height: 100vh;
     margin-left: 20px;
+    margin-top: 30px;
     max-width: 50vw;
+}
+
+.card_home > div{
+    margin-bottom: 10px;
+}
+
+.card_home > div > p{
+    font-weight: 600;
+}
+
+.card_home > div > h2{
+    margin-bottom: 30px;
 }
 
 .image_home{
