@@ -65,7 +65,7 @@ export function Home() {
       <div className={styles.card_home}>
         <div>
           <h2>O que vamos comer hoje?</h2>
-          <p>Recomendação do momento</p>
+          <p>Recomendação do momento:</p>
         </div>
         <RecipeCard
           image={meal.mealImage}
