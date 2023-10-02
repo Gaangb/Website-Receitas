@@ -16,7 +16,8 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #d4bfb3;
+  font-weight: bold;
 }
 
 button:focus,
