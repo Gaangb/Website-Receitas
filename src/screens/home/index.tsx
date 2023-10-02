@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import image from "../../assets/home_image.webp";
+import image from "../../assets/home_image.jpg";
 import styles from "./home.module.css";
 import { RecipeCard } from "../../components/molecules/recipeCard";
 
@@ -63,8 +63,10 @@ export function Home() {
   return (
     <div className={styles.container_home}>
       <div className={styles.card_home}>
-        <h2>O que vamos comer hoje?</h2>
-        <p>Recomendação do momento</p>
+        <div>
+          <h2>O que vamos comer hoje?</h2>
+          <p>Recomendação do momento</p>
+        </div>
         <RecipeCard
           image={meal.mealImage}
           titulo={meal.mealName}
@@ -72,7 +74,7 @@ export function Home() {
         />
       </div>
       <div>
-        <img src={image} />
+        <img src={image} className={styles.image_home} />
       </div>
     </div>
   );

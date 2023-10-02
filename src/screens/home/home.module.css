@@ -3,3 +3,14 @@
     display: flex;
     justify-content: space-between;
 }
+
+.card_home{
+    height: 100vh;
+    margin-left: 20px;
+    max-width: 50vw;
+}
+
+.image_home{
+    height: 100%;
+    width: 100%;
+}

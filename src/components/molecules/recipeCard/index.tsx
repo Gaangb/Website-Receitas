@@ -12,13 +12,13 @@ export function RecipeCard({ image, titulo, ingredientes }: CardProps) {
       <div>
         <img src={image} alt="" />
       </div>
-      <div>
-        <div>{titulo}</div>
-        <div>
+      <div className={styles.texto_receita}>
+        <div className={styles.titulo_receita}>{titulo}</div>
+        <ul>
             {ingredientes.map((value, index) => (
-            <div key={index}>{value}</div>
+            <li key={index}>{value.toUpperCase()}</li>
             ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

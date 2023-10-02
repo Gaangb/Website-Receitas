@@ -1,9 +1,29 @@
 .container_recipeCard{
     display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border: 4px dotted #8a472b;
+    border-radius: 4px;
+    width: 50vw;
+}
+
+.texto_receita{
+    margin-left: 4px;
+    color: #342316;
 }
 
 .container_recipeCard > div > img{
     width: 30vw;
-
+    border-radius: 4px;
 }
 
+.titulo_receita{
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.texto_receita > ul >li {
+    list-style: none;
+    margin-bottom: 4px
+}
