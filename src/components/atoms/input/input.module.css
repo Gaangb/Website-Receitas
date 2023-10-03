@@ -1,0 +1,12 @@
+.input_search_name{
+    background-color: #9e6946;
+    width: 50vw;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    color: white;
+  }
