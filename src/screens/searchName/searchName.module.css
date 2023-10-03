@@ -1,0 +1,23 @@
+.container_geral_search_name{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container_search_name{
+    display: flex;
+    padding: 4rem;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container_search_name > div:first-of-type{
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.container_search_name > h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 2vh;
+}
