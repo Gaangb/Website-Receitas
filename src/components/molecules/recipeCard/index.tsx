@@ -1,4 +1,4 @@
-import styles from './recipeCard.module.css'
+import styles from "./recipeCard.module.css";
 
 interface CardProps {
   image: string;
@@ -8,17 +8,21 @@ interface CardProps {
 
 export function RecipeCard({ image, titulo, ingredientes }: CardProps) {
   return (
-    <div className={styles.container_recipeCard}>
-      <div>
-        <img src={image} alt="" />
-      </div>
-      <div className={styles.texto_receita}>
-        <div className={styles.titulo_receita}>{titulo}</div>
-        <ul>
-            {ingredientes.map((value, index) => (
-            <li key={index}>{value.toUpperCase()}</li>
-            ))}
-        </ul>
+    <div className={styles.container_recipe_wrapper}>
+      <div className={styles.container_recipeCard}>
+        <div className={styles.titulo_receita}><p>{titulo}</p></div>
+        <div className={styles.imagem_ingredientes}>
+          <div className={styles.imagem_receita}>
+            <img src={image} alt="" />
+          </div>
+          <div className={styles.texto_receita}>
+            <ul>
+              {ingredientes.map((value, index) => (
+                <li key={index}>{value}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
