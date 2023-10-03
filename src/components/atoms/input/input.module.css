@@ -1,10 +1,18 @@
-.input_search_name{
+.container_input{
     background-color: #9e6946;
     width: 50vw;
     border-radius: 5px;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_search_name{
+    width: 100%;
+    background-color: #9e6946;
     outline: none;
     border: none;
+    color: white;
 }
 
 input::placeholder {
