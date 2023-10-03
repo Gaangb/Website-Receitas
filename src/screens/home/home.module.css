@@ -8,21 +8,39 @@
 
 .card_home{
     height: 100vh;
-    margin-left: 20px;
     margin-top: 30px;
-    max-width: 50vw;
+    /* max-width: 50vw; */
+    width: 100%;
 }
 
 .card_home > div{
-    margin-bottom: 10px;
+    padding-left: 20px;
 }
 
 .card_home > div > p{
     font-weight: 600;
 }
 
-.card_home > div > h2{
+.card_home > div > h3{
     margin-bottom: 30px;
+}
+
+.container_home_recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 40vw;
+}
+
+.container_home_recipe > p {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.image_homeWrapper {
+    width: 36vw;
 }
 
 .image_home{

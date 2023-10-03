@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import image from "../../assets/home_image.jpg";
+import image from "../../assets/home_image2.webp";
 import styles from "./home.module.css";
 import { RecipeCard } from "../../components/molecules/recipeCard";
 
@@ -19,7 +19,18 @@ export function Home() {
 
   useEffect(() => {
     getRecipe();
+    getRecipes()
   },[]);
+
+  async function getRecipes() {
+    try {
+      const response = await axios.get("www.themealdb.com/api/json/v1/1/randomselection.php")
+      console.log(response)
+    }
+    catch(error) {
+      console.log("error")
+    }
+  }
 
   async function getRecipe() {
     try {
@@ -56,7 +67,7 @@ export function Home() {
         ],
       }));
     } catch (error) {
-      console.log("erro");
+      console.log(error);
     }
   }
 
@@ -64,16 +75,18 @@ export function Home() {
     <div className={styles.container_home}>
       <div className={styles.card_home}>
         <div>
-          <h2>O que vamos comer hoje?</h2>
-          <p>Recomendação do momento:</p>
+          <h2>Bem vindo!</h2>
+          <h3>O que vamos comer hoje?</h3>
         </div>
-        <RecipeCard
-          image={meal.mealImage}
-          titulo={meal.mealName}
-          ingredientes={meal.mealIngredientes}
-        />
+        <div className={styles.container_home_recipe}>
+          <RecipeCard
+            image={meal.mealImage}
+            titulo={meal.mealName}
+            ingredientes={meal.mealIngredientes}
+          />
+        </div>
       </div>
-      <div>
+      <div className={styles.image_homeWrapper}>
         <img src={image} className={styles.image_home} />
       </div>
     </div>
