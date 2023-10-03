@@ -19,18 +19,7 @@ export function Home() {
 
   useEffect(() => {
     getRecipe();
-    getRecipes()
   },[]);
-
-  async function getRecipes() {
-    try {
-      const response = await axios.get("www.themealdb.com/api/json/v1/1/randomselection.php")
-      console.log(response)
-    }
-    catch(error) {
-      console.log("error")
-    }
-  }
 
   async function getRecipe() {
     try {
