@@ -1,0 +1,42 @@
+.container_geral_search_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #342316;
+}
+
+.container_search_name > div > h2{
+    color: #342316;
+}
+
+.container_search_name > div > button{
+    background-color: #8a472b;
+    padding: .5rem 1rem;
+    margin: 10px 3.6px;
+}
+
+.container_search_meals {
+  height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  max-width: 85vw;
+  justify-content: space-between;
+}
+
+.container_search_meals::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container_search_meals::-webkit-scrollbar-thumb {
+  background-color: #8a472b;
+  border-radius: 5px;
+}
+
+.container_search_meals::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
