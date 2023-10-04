@@ -10,7 +10,15 @@ export function NavBar(){
     }
 
     function handleNavigateToSearchByName(){
-        navigate('/search-name');
+        navigate('/search_by_name');
+    }
+
+    function handleNavigateToSearchByLetter(){
+        navigate('/search_by_letter')
+    }
+
+    function handleNavigateToSearchByIngredient(){
+        navigate('/search_by_ingredient')
     }
 
     return(
@@ -21,8 +29,8 @@ export function NavBar(){
             <div className={styles.container_buttons_navBar}>
                 <Button text="Home" customClass="Button_NavBar" onClick={() => handleNavigateToHome()}/>
                 <Button text="Busca por nome" customClass="Button_NavBar" onClick={() => handleNavigateToSearchByName()}/>
-                <Button text="Busca Alfabetica" customClass="Button_NavBar"/>
-                <Button text="Busca por ingredientes" customClass="Button_NavBar"/>
+                <Button text="Busca Alfabetica" customClass="Button_NavBar" onClick={() => handleNavigateToSearchByLetter()}/>
+                <Button text="Busca por ingredientes" customClass="Button_NavBar" onClick={() => handleNavigateToSearchByIngredient()}/>
             </div>
         </div>
     )
