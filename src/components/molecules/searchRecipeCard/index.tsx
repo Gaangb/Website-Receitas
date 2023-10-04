@@ -7,7 +7,7 @@ interface CardProps {
 
 }
 
-export function SearchRecipeCard({ image, titulo, key}: CardProps) {
+export function SearchRecipeCard({ image, titulo}: CardProps) {
   return (
     <div className={styles.container_search_recipe_card}>
         <div>

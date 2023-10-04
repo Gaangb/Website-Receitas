@@ -62,6 +62,10 @@
   font-size: 14px;
 }
 
+.texto_receita > p{
+  padding-left: 16px;
+}
+
 .texto_receita > ul {
   display: flex;
   flex-wrap: wrap;
