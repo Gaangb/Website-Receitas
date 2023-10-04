@@ -16,6 +16,7 @@ export function RecipeCard({ image, titulo, ingredientes }: CardProps) {
             <img src={image} alt="" />
           </div>
           <div className={styles.texto_receita}>
+            <p>Ingredientes</p>
             <ul>
               {ingredientes.map((value, index) => (
                 <li key={index}>{value}</li>
