@@ -5,10 +5,10 @@
     justify-content: space-between;
     color: #342316;
     font-size: 20px;
-    background-size: cover; /* Ajusta a imagem para cobrir todo o espaço disponível */
-    background-repeat: no-repeat; /* Evita que a imagem seja repetida */
-    background-attachment: fixed; /* Fixa a imagem de fundo para que ela não role com a página */
-    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
     height: 100%;
     color: white;
 }
