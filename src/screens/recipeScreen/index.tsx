@@ -5,7 +5,7 @@ import styles from "./recipe.module.css";
 
 type Meal = {
   idMeal?: string;
-  mealIngredientes: Array<string>;
+  mealIngredients: Array<string>;
   mealName: string;
   mealArea: string;
   mealImage: string;
@@ -17,7 +17,7 @@ export function RecipeScreen() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState<Meal>({
     idMeal: id,
-    mealIngredientes: [],
+    mealIngredients: [],
     mealName: "",
     mealArea: "",
     mealImage: "",
@@ -32,57 +32,29 @@ export function RecipeScreen() {
       );
 
       const mealData = response.data.meals[0];
+      const mealIngredients: string[] = [];
+      const mealMeasures: string[] = [];
+
+      for (let i = 1; i <= 20; i++) {
+        const ingredient = mealData[`strIngredient${i}`];
+        const measure = mealData[`strMeasure${i}`];
+
+        if (ingredient && measure) {
+          mealIngredients.push(ingredient);
+          mealMeasures.push(measure);
+        }
+      }
+
       setRecipe((recipe) => ({
         ...recipe,
-        mealIngredientes: [
-          mealData.strIngredient1,
-          mealData.strIngredient2,
-          mealData.strIngredient3,
-          mealData.strIngredient4,
-          mealData.strIngredient5,
-          mealData.strIngredient6,
-          mealData.strIngredient7,
-          mealData.strIngredient8,
-          mealData.strIngredient9,
-          mealData.strIngredient10,
-          mealData.strIngredient11,
-          mealData.strIngredient12,
-          mealData.strIngredient13,
-          mealData.strIngredient14,
-          mealData.strIngredient15,
-          mealData.strIngredient16,
-          mealData.strIngredient17,
-          mealData.strIngredient18,
-          mealData.strIngredient19,
-          mealData.strIngredient20,
-        ],
+        mealIngredients,
         mealName: mealData.strMeal,
         mealArea: mealData.strArea,
         mealImage: mealData.strMealThumb,
         mealInstructions: mealData.strInstructions,
-        mealMeasures: [
-          mealData.strMeasure1,
-          mealData.strMeasure2,
-          mealData.strMeasure3,
-          mealData.strMeasure4,
-          mealData.strMeasure5,
-          mealData.strMeasure6,
-          mealData.strMeasure7,
-          mealData.strMeasure8,
-          mealData.strMeasure9,
-          mealData.strMeasure10,
-          mealData.strMeasure11,
-          mealData.strMeasure12,
-          mealData.strMeasure13,
-          mealData.strMeasure14,
-          mealData.strMeasure15,
-          mealData.strMeasure16,
-          mealData.strMeasure17,
-          mealData.strMeasure18,
-          mealData.strMeasure19,
-          mealData.strMeasure20,
-        ],
+        mealMeasures,
       }));
+
       console.log(recipe);
     } catch (error) {
       console.log(error);
@@ -99,12 +71,12 @@ export function RecipeScreen() {
         <img src={recipe.mealImage} alt={recipe.mealName} />
         <div className={styles.container_ingredients_measures}>
           <div>
-            <p>Ingredientes</p>
-            <p>Medidas</p>
+            <p>Ingredients</p>
+            <p>Measures</p>
           </div>
           <div>
             <div>
-              {recipe.mealIngredientes.map((ingredient, index) => (
+              {recipe.mealIngredients.map((ingredient, index) => (
                 <p key={index}>{ingredient}</p>
               ))}
             </div>

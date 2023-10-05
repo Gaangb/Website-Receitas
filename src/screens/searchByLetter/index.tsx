@@ -67,19 +67,21 @@ export function SearchByLetter() {
     <div className={styles.container_geral_search_name}>
       <div className={styles.container_search_name}>
         <div>
-          <h2>Pesquisar receitas por letra:</h2>
+          <h2>Search by letter:</h2>
+          <div>
           {letters.map((letter) => (
             <button onClick={() => setRecipeName(letter)} key={letter} className={styles.button_letters}>
               {letter}
             </button>
           ))}
+          </div>
         </div>
         <div className={styles.container_search_meals}>
           {recipesFound ? (
             recipesFound.map((recipe: Recipe) => (
               <button onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
                 <SearchRecipeCard
-                  titulo={recipe.strMeal}
+                  title={recipe.strMeal}
                   image={recipe.strMealThumb}
                   key={recipe.idMeal}
                 />
@@ -87,7 +89,7 @@ export function SearchByLetter() {
             ))
           ) : (
             <div className={styles.container_not_found}>
-              <p>Não foi encontrada nenhuma receita.</p>
+              <p>Recipe not found.</p>
             </div>
           )}
         </div>

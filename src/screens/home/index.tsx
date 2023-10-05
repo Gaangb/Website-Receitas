@@ -4,7 +4,7 @@ import styles from "./home.module.css";
 import { RecipeCard } from "../../components/molecules/recipeCard";
 
 type Meal = {
-  mealIngredientes: Array<string>;
+  mealIngredients: Array<string>;
   mealName: string;
   mealImage: string;
 };
@@ -13,7 +13,7 @@ export function Home() {
   const [meal, setMeal] = useState<Meal>({
     mealName: "",
     mealImage: "",
-    mealIngredientes: [],
+    mealIngredients: [],
   });
 
   useEffect(() => {
@@ -27,32 +27,20 @@ export function Home() {
       );
 
       const mealData = response.data.meals[0];
+      const mealIngredients: string[] = [];
+
+      for (let i = 1; i <= 20; i++) {
+        const ingredient = mealData[`strIngredient${i}`];
+
+        if (ingredient) {
+          mealIngredients.push(ingredient);
+        }
+      }
       setMeal((state) => ({
         ...state,
         mealName: mealData.strMeal,
         mealImage: mealData.strMealThumb,
-        mealIngredientes: [
-          mealData.strIngredient1,
-          mealData.strIngredient2,
-          mealData.strIngredient3,
-          mealData.strIngredient4,
-          mealData.strIngredient5,
-          mealData.strIngredient6,
-          mealData.strIngredient7,
-          mealData.strIngredient8,
-          mealData.strIngredient9,
-          mealData.strIngredient10,
-          mealData.strIngredient11,
-          mealData.strIngredient12,
-          mealData.strIngredient13,
-          mealData.strIngredient14,
-          mealData.strIngredient15,
-          mealData.strIngredient16,
-          mealData.strIngredient17,
-          mealData.strIngredient18,
-          mealData.strIngredient19,
-          mealData.strIngredient20,
-        ],
+        mealIngredients,
       }));
     } catch (error) {
       console.log(error);
@@ -63,14 +51,14 @@ export function Home() {
     <div className={styles.container_home}>
       <div className={styles.card_home}>
         <div>
-          <h2>Bem vindo!</h2>
-          <h3>O que vamos comer hoje?</h3>
+          <h2>Welcome!</h2>
+          <h3>What would you like to cook today?</h3>
         </div>
         <div className={styles.container_home_recipe}>
           <RecipeCard
             image={meal.mealImage}
-            titulo={meal.mealName}
-            ingredientes={meal.mealIngredientes}
+            title={meal.mealName}
+            ingredients={meal.mealIngredients}
           />
         </div>
       </div>

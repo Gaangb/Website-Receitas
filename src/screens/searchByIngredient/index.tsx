@@ -54,11 +54,11 @@ export function SearchByIngredient() {
     <div className={styles.container_geral_search_name}>
       <div className={styles.container_search_name}>
         <div>
-          <h2>Pesquisar receitas por ingrediente:</h2>
+          <h2>Search by ingredient:</h2>
         </div>
         <div>
           <Input
-            text="Digite sua pesquisa"
+            text="Enter your search"
             customClass="input_search_name"
             onChange={(e) => setRecipeIngredient(e.target.value)}
           />
@@ -68,7 +68,7 @@ export function SearchByIngredient() {
             recipesFound.map((recipe: Recipe) => (
               <button className={styles.button_searchName} onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
                 <SearchRecipeCard
-                  titulo={recipe.strMeal}
+                  title={recipe.strMeal}
                   image={recipe.strMealThumb}
                   key={recipe.idMeal}
                 />
@@ -76,7 +76,7 @@ export function SearchByIngredient() {
             ))
           ) : (
             <div className={styles.container_not_found}>
-              <p>Não foi encontrada nenhuma receita.</p>
+              <p>Not found.</p>
             </div>
           )}
         </div>
