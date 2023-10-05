@@ -26,11 +26,6 @@ button {
   color: white;
 }
 
-/* button:hover {
-  border-color: #d4bfb3;
-  font-weight: bold;
-} */
-
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
