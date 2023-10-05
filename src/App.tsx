@@ -6,6 +6,7 @@ import { SearchName } from "./screens/searchName";
 import { SearchByLetter } from "./screens/searchByLetter";
 import { SearchByIngredient } from "./screens/searchByIngredient";
 import { RecipeScreen } from "./screens/recipeScreen";
+import { PageNotFoundScreen } from "./screens/pageNotFoundScreen";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <Route path="/search_by_letter" element={<SearchByLetter />} />
             <Route path="/search_by_ingredient" element={<SearchByIngredient />} />
             <Route path="/recipe_by_id/:id" element={<RecipeScreen />} />
-            <Route path="*" element={<h1>Page not found</h1>} />
+            <Route path="*" element={<PageNotFoundScreen />} />
           </Routes>
         </div>
       </div>
