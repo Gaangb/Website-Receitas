@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Input } from "../../components/atoms/input";
-import styles from "./searchByIngredient.module.css";
-import image from "../../assets/search_ingredient_image.webp";
 import { SearchRecipeCard } from "../../components/molecules/searchRecipeCard";
-import { Button } from "../../components/atoms/button";
+import styles from "./searchByIngredient.module.css";
+import image from "../../assets/search_ingredient_image.png";
+
+type Recipe = {
+  strMeal: string;
+  strMealThumb: string;
+  idMeal?: number;
+}
 
 export function SearchByIngredient() {
+  const navigate = useNavigate();
   const [recipeIngredient, setRecipeIngredient] = useState("");
   const [recipesFound, setRecipesFound] = useState([]);
   const [ingredientsFound, setIngredientsFound] =useState([])
@@ -34,6 +41,10 @@ export function SearchByIngredient() {
     }
   }
 
+  function handleNavigateToRecipeScreen(id?: number) {
+    navigate(`/recipe_by_id/${id}`)
+  }
+
   useEffect(() => {
     handleSearch();
     getIngredients()
@@ -54,39 +65,23 @@ export function SearchByIngredient() {
         </div>
         <div className={styles.container_search_meals}>
           {recipesFound ? (
-            recipesFound.map((recipe: any) => (
-              <SearchRecipeCard
-                titulo={recipe.strMeal}
-                image={recipe.strMealThumb}
-                key={recipe.idMeal}
-              />
+            recipesFound.map((recipe: Recipe) => (
+              <button className={styles.button_searchName} onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
+                <SearchRecipeCard
+                  titulo={recipe.strMeal}
+                  image={recipe.strMealThumb}
+                  key={recipe.idMeal}
+                />
+              </button>
             ))
           ) : (
-            // ingredientsFound.map((ingredient: any) => (
-            //   <Button text={ingredient} onClick={() => setRecipeIngredient(ingredient)} />
-            // ))
-            // <p>Não foi encontrada nenhuma receita.</p>
-            <div className={styles.container_search_buttons} >
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
-              <Button text='Chicken temperada' customClass="ingredient_button"/>
+            <div className={styles.container_not_found}>
+              <p>Não foi encontrada nenhuma receita.</p>
             </div>
-
           )}
         </div>
       </div>
-      <div>
+      <div className={styles.search_ingredient_image}>
         <img src={image} alt="" />
       </div>
     </div>

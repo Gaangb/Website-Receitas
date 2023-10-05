@@ -2,9 +2,15 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Input } from "../../components/atoms/input";
-import styles from "./searchName.module.css";
-import image from "../../assets/search_name_image2.png";
 import { SearchRecipeCard } from "../../components/molecules/searchRecipeCard";
+import styles from "./searchName.module.css";
+import image from "../../assets/search_name_image.png";
+
+type Recipe = {
+  strMeal: string;
+  strMealThumb: string;
+  idMeal?: number;
+}
 
 export function SearchName() {
   const navigate = useNavigate();
@@ -23,7 +29,7 @@ export function SearchName() {
     }
   }
 
-  function handleNavigateToRecipeScreen(id: number) {
+  function handleNavigateToRecipeScreen(id?: number) {
     navigate(`/recipe_by_id/${id}`)
   }
 
@@ -46,7 +52,7 @@ export function SearchName() {
         </div>
         <div className={styles.container_search_meals}>
           {recipesFound ? (
-            recipesFound.map((recipe: any) => (
+            recipesFound.map((recipe: Recipe) => (
               <button className={styles.button_searchName} onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
                 <SearchRecipeCard
                   titulo={recipe.strMeal}

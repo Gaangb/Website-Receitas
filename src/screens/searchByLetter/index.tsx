@@ -1,9 +1,17 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import styles from "./searchByLetter.module.css";
 import { SearchRecipeCard } from "../../components/molecules/searchRecipeCard";
+import styles from "./searchByLetter.module.css";
+
+type Recipe = {
+  strMeal: string;
+  strMealThumb: string;
+  idMeal?: number;
+}
 
 export function SearchByLetter() {
+  const navigate = useNavigate();
   const [recipeName, setRecipeName] = useState("");
   const [recipesFound, setRecipesFound] = useState([]);
   const letters = [
@@ -47,6 +55,10 @@ export function SearchByLetter() {
     }
   }
 
+  function handleNavigateToRecipeScreen(id?: number) {
+    navigate(`/recipe_by_id/${id}`)
+  }
+
   useEffect(() => {
     handleSearch();
   }, [recipeName]);
@@ -57,19 +69,21 @@ export function SearchByLetter() {
         <div>
           <h2>Pesquisar receitas por letra:</h2>
           {letters.map((letter) => (
-            <button onClick={() => setRecipeName(letter)} key={letter}>
+            <button onClick={() => setRecipeName(letter)} key={letter} className={styles.button_letters}>
               {letter}
             </button>
           ))}
         </div>
         <div className={styles.container_search_meals}>
           {recipesFound ? (
-            recipesFound.map((recipe: any) => (
-              <SearchRecipeCard
-                titulo={recipe.strMeal}
-                image={recipe.strMealThumb}
-                key={recipe.idMeal}
-              />
+            recipesFound.map((recipe: Recipe) => (
+              <button onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
+                <SearchRecipeCard
+                  titulo={recipe.strMeal}
+                  image={recipe.strMealThumb}
+                  key={recipe.idMeal}
+                />
+              </button>
             ))
           ) : (
             <div className={styles.container_not_found}>
