@@ -36,4 +36,5 @@
 
 .search_recipe_card_image > img{
     width: 100%;
+    border-radius: 0 0 5px 5px
 }

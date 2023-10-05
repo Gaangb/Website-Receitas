@@ -17,7 +17,8 @@
   background-color: black;
   outline: none;
   border: none;
-  color: black;
+  color: white;
+  padding: 2px;
 }
 
 input::placeholder {

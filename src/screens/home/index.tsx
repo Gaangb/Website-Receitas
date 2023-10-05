@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import image from "../../assets/home_image2.webp";
 import styles from "./home.module.css";
 import { RecipeCard } from "../../components/molecules/recipeCard";
 

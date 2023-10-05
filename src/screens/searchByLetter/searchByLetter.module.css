@@ -1,29 +1,28 @@
-.container_geral_search_name{
+.container_geral_search_name {
   background: url("../../assets/background2.png");
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    height: 100vh;
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 100vh;
+  color: white;
 }
 
-.container_search_name > div > h2{
-    color: white;
+.container_search_name > div > h2 {
+  color: white;
 }
-
-.container_search_name > div > button{
-    background-color: black;
-    padding: .5rem 1rem;
-    margin: 10px 3.6px;
+.button_letters {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  margin: 10px 3.6px;
 }
 
 .container_search_meals {
-  height: 60vh;
+  max-height: 60vh;
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;
