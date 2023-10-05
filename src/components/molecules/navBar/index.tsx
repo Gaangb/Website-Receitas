@@ -1,37 +1,56 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from './navBar.module.css'
-import { Button } from "../../atoms/button"
+import styles from "./NavBar.module.css";
+import { Button } from "../../atoms/button";
 
-export function NavBar(){
-    const navigate = useNavigate()
+export function NavBar() {
+  const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    function handleNavigateToHome(){
-        navigate('/');
-    }
+  function handleNavigate(path: string) {
+    navigate(path);
+    setIsMenuOpen(false);
+  }
 
-    function handleNavigateToSearchByName(){
-        navigate('/search_by_name');
-    }
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+  }
 
-    function handleNavigateToSearchByLetter(){
-        navigate('/search_by_letter')
-    }
-
-    function handleNavigateToSearchByIngredient(){
-        navigate('/search_by_ingredient')
-    }
-
-    return(
-        <div className={styles.container_NabBar}>
-            <div>
-                <h1>Receitas BG</h1>
-            </div>
-            <div className={styles.container_buttons_navBar}>
-                <Button text="Home" customClass="button_nav_bar" onClick={() => handleNavigateToHome()}/>
-                <Button text="Busca por nome" customClass="button_nav_bar" onClick={() => handleNavigateToSearchByName()}/>
-                <Button text="Busca Alfabetica" customClass="button_nav_bar" onClick={() => handleNavigateToSearchByLetter()}/>
-                <Button text="Busca por ingredientes" customClass="button_nav_bar" onClick={() => handleNavigateToSearchByIngredient()}/>
-            </div>
-        </div>
-    )
+  return (
+    <nav className={styles.navBar}>
+      <div className={styles.logoContainer}>
+        <h1>Recipes BG</h1>
+      </div>
+      <div
+        className={`${styles.menuIcon} ${isMenuOpen ? styles.open : ""}`}
+        onClick={toggleMenu}
+      >
+        <div className={styles.bar}></div>
+        <div className={styles.bar}></div>
+        <div className={styles.bar}></div>
+      </div>
+      <div className={`${styles.menuItems} ${isMenuOpen ? styles.open : ""}`}>
+        <Button
+          text="Home"
+          customClass="button_nav_bar"
+          onClick={() => handleNavigate("/")}
+        />
+        <Button
+          text="Search by name"
+          customClass="button_nav_bar"
+          onClick={() => handleNavigate("/search_by_name")}
+        />
+        <Button
+          text="Search by letter"
+          customClass="button_nav_bar"
+          onClick={() => handleNavigate("/search_by_letter")}
+        />
+        <Button
+          text="Search by ingredient"
+          customClass="button_nav_bar"
+          onClick={() => handleNavigate("/search_by_ingredient")}
+        />
+      </div>
+    </nav>
+  );
 }
