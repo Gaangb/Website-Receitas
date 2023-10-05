@@ -18,7 +18,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/search_by_name" element={<SearchName />} />
             <Route path="/search_by_letter" element={<SearchByLetter />} />
-            <Route path="/search_by_ingredient" element={<SearchByIngredient />} />
+            <Route
+              path="/search_by_ingredient"
+              element={<SearchByIngredient />}
+            />
             <Route path="/recipe_by_id/:id" element={<RecipeScreen />} />
             <Route path="*" element={<PageNotFoundScreen />} />
           </Routes>

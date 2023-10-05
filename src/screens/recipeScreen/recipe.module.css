@@ -43,7 +43,7 @@
 }
 
 .container_lateral > p::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.500);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 
@@ -70,7 +70,7 @@
   font-weight: bold;
 }
 
-.container_ingredients_measures > div:first-of-type > p:nth-child(2){
+.container_ingredients_measures > div:first-of-type > p:nth-child(2) {
   margin-left: 62px;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .container_ingredients_measures > div:nth-child(2)::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.500);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 
@@ -95,31 +95,30 @@
   border-radius: 5px;
 }
 
-
 .container_ingredients_measures > div:nth-child(2) > div > p {
   margin-top: 10px;
   margin-left: 10px;
 }
 
 @media (max-width: 768px) {
-  .container{
+  .container {
     flex-direction: column;
     margin-top: 10px;
     height: 90vh;
     justify-content: flex-start;
   }
-  .container > div:first-of-type{
+  .container > div:first-of-type {
     justify-content: flex-start;
     width: 100vw;
     height: 40vh;
   }
-  .container > div > img{
+  .container > div > img {
     width: 50vw;
   }
-  .container_ingredients_measures{
+  .container_ingredients_measures {
     width: 80vw;
   }
-  .container_lateral{
+  .container_lateral {
     width: 80vw;
     margin-top: 6rem;
     height: 30vh;

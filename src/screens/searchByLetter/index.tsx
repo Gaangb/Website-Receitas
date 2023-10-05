@@ -8,7 +8,7 @@ type Recipe = {
   strMeal: string;
   strMealThumb: string;
   idMeal?: number;
-}
+};
 
 export function SearchByLetter() {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ export function SearchByLetter() {
   }
 
   function handleNavigateToRecipeScreen(id?: number) {
-    navigate(`/recipe_by_id/${id}`)
+    navigate(`/recipe_by_id/${id}`);
   }
 
   useEffect(() => {
@@ -69,17 +69,23 @@ export function SearchByLetter() {
         <div>
           <h2>Search by letter:</h2>
           <div>
-          {letters.map((letter) => (
-            <button onClick={() => setRecipeName(letter)} key={letter} className={styles.button_letters}>
-              {letter}
-            </button>
-          ))}
+            {letters.map((letter) => (
+              <button
+                onClick={() => setRecipeName(letter)}
+                key={letter}
+                className={styles.button_letters}
+              >
+                {letter}
+              </button>
+            ))}
           </div>
         </div>
         <div className={styles.container_search_meals}>
           {recipesFound ? (
             recipesFound.map((recipe: Recipe) => (
-              <button onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
+              <button
+                onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}
+              >
                 <SearchRecipeCard
                   title={recipe.strMeal}
                   image={recipe.strMealThumb}

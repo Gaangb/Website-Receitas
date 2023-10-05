@@ -56,13 +56,12 @@
 }
 
 .recipe_text > ul > li {
-
   list-style: none;
   margin-bottom: 4px;
   font-size: 14px;
 }
 
-.recipe_text > p{
+.recipe_text > p {
   padding-left: 16px;
   margin-bottom: 10px;
 }
@@ -75,9 +74,8 @@
   padding: 10px 16px 0px 16px;
 }
 
-
 @media (max-width: 768px) {
-  .container_recipeCard{
+  .container_recipeCard {
     width: 80vw;
     margin-top: 70px;
     justify-content: center;
@@ -89,7 +87,7 @@
     max-height: 40vh;
     padding-right: 16px;
   }
-  .ingredient_image{
+  .ingredient_image {
     flex-direction: column;
   }
 }

@@ -1,14 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
   color-scheme: light dark;
 }
 
-body{
+body {
   background-color: black;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.87);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
-

@@ -18,7 +18,7 @@ export function Home() {
 
   useEffect(() => {
     getRecipe();
-  },[]);
+  }, []);
 
   async function getRecipe() {
     try {

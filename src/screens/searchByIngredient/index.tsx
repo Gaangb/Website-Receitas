@@ -10,13 +10,13 @@ type Recipe = {
   strMeal: string;
   strMealThumb: string;
   idMeal?: number;
-}
+};
 
 export function SearchByIngredient() {
   const navigate = useNavigate();
   const [recipeIngredient, setRecipeIngredient] = useState("");
   const [recipesFound, setRecipesFound] = useState([]);
-  const [ingredientsFound, setIngredientsFound] =useState([])
+  const [ingredientsFound, setIngredientsFound] = useState([]);
 
   async function handleSearch() {
     try {
@@ -29,25 +29,25 @@ export function SearchByIngredient() {
     }
   }
 
-  async function  getIngredients() {
+  async function getIngredients() {
     try {
       const response = await axios.get(
-        'https://www.themealdb.com/api/json/v1/1/list.php?i=list'
+        "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
       );
-      setIngredientsFound(response.data.meals)
-      console.log(ingredientsFound)
+      setIngredientsFound(response.data.meals);
+      console.log(ingredientsFound);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
   function handleNavigateToRecipeScreen(id?: number) {
-    navigate(`/recipe_by_id/${id}`)
+    navigate(`/recipe_by_id/${id}`);
   }
 
   useEffect(() => {
     handleSearch();
-    getIngredients()
+    getIngredients();
   }, [recipeIngredient]);
 
   return (
@@ -66,7 +66,10 @@ export function SearchByIngredient() {
         <div className={styles.container_search_meals}>
           {recipesFound ? (
             recipesFound.map((recipe: Recipe) => (
-              <button className={styles.button_searchName} onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
+              <button
+                className={styles.button_searchName}
+                onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}
+              >
                 <SearchRecipeCard
                   title={recipe.strMeal}
                   image={recipe.strMealThumb}

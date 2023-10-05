@@ -25,9 +25,8 @@ input::placeholder {
   color: white;
 }
 
-
-@media (max-width:768px) {
-  .container_input{
+@media (max-width: 768px) {
+  .container_input {
     width: 100vw;
   }
 }

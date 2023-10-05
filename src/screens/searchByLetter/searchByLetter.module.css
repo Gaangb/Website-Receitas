@@ -55,7 +55,7 @@
 }
 
 @media (max-width: 768px) {
-  .container_search_name > div > div{
+  .container_search_name > div > div {
     display: flex;
     overflow-x: auto;
     flex-wrap: nowrap;
@@ -66,7 +66,6 @@
   }
   .container_search_name > div > div::-webkit-scrollbar {
     width: 12px;
-
   }
   .container_search_name > div > div::-webkit-scrollbar-thumb {
     background-color: #a67b67;

@@ -10,7 +10,9 @@ export function RecipeCard({ image, title, ingredients }: CardProps) {
   return (
     <div className={styles.container_recipe_wrapper}>
       <div className={styles.container_recipeCard}>
-        <div className={styles.recipe_title}><p>{title}</p></div>
+        <div className={styles.recipe_title}>
+          <p>{title}</p>
+        </div>
         <div className={styles.ingredient_image}>
           <div className={styles.recipe_image}>
             <img src={image} alt="" />
