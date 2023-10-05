@@ -1,0 +1,32 @@
+.container_input {
+  background-color: black;
+  max-width: 70vw;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #a67b67;
+}
+
+.container_input:last-child {
+  color: white;
+}
+
+.input_search_name {
+  width: 100%;
+  background-color: black;
+  outline: none;
+  border: none;
+  color: white;
+  padding: 2px;
+}
+
+input::placeholder {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .container_input {
+    width: 100vw;
+  }
+}

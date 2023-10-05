@@ -1,0 +1,126 @@
+.container {
+  background: url("../../assets/background_recipe.png");
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: rgb(232, 235, 237);
+}
+
+.container > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 70vh;
+}
+
+.container > div > img {
+  width: 20vw;
+  border-radius: 50px 0 50px 0;
+}
+
+.container_lateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 70vh;
+  width: 30vw;
+  overflow: auto;
+  margin-left: 30px;
+}
+
+.container_lateral > p {
+  margin-top: 10px;
+  overflow-y: auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container_lateral > p::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container_lateral > p::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.container_lateral > p::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.container_ingredients_measures {
+  display: flex;
+  width: 20vw;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container_ingredients_measures > div:first-of-type {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container_ingredients_measures > div:first-of-type > p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.container_ingredients_measures > div:first-of-type > p:nth-child(2) {
+  margin-left: 62px;
+}
+
+.container_ingredients_measures > div:nth-child(2) {
+  display: flex;
+  height: 22vh;
+  overflow: auto;
+  justify-content: space-around;
+}
+
+.container_ingredients_measures > div:nth-child(2)::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container_ingredients_measures > div:nth-child(2)::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.container_ingredients_measures > div:nth-child(2)::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.container_ingredients_measures > div:nth-child(2) > div > p {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin-top: 10px;
+    height: 90vh;
+    justify-content: flex-start;
+  }
+  .container > div:first-of-type {
+    justify-content: flex-start;
+    width: 100vw;
+    height: 40vh;
+  }
+  .container > div > img {
+    width: 50vw;
+  }
+  .container_ingredients_measures {
+    width: 80vw;
+  }
+  .container_lateral {
+    width: 80vw;
+    margin-top: 6rem;
+    height: 30vh;
+  }
+}

@@ -1,0 +1,55 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.menuIcon {
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.menuItems {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block;
+  }
+
+  .menuItems {
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background-color: black;
+    z-index: 1;
+    display: none;
+  }
+
+  .menuItems.open {
+    display: flex;
+  }
+}

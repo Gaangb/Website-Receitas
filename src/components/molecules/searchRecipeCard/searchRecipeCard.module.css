@@ -1,0 +1,44 @@
+.container_search_recipe_card {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+  padding: 8px;
+  border: 1px solid transparent;
+  height: 134px;
+}
+
+.container_search_recipe_card:hover {
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container_search_recipe_card > div:first-of-type {
+  border-bottom: 2px solid #a67b67;
+}
+
+.container_search_recipe_card > div:first-of-type > p {
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search_recipe_card_image {
+  width: 100px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+.search_recipe_card_image > img {
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+}
+
+@media (max-width: 768px) {
+  .container_search_recipe_card {
+    max-width: 20vw;
+  }
+}

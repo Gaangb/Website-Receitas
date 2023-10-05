@@ -1,0 +1,78 @@
+.container_geral_search_name {
+  background: url("../../assets/background2.png");
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 100vh;
+  color: white;
+}
+
+.container_search_name > div > h2 {
+  color: white;
+}
+.button_letters {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  margin: 10px 3.6px;
+}
+
+.container_search_meals {
+  max-height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  max-width: 85vw;
+  justify-content: space-between;
+}
+
+.container_search_meals::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container_search_meals::-webkit-scrollbar-thumb {
+  background-color: #a67b67;
+  border-radius: 5px;
+}
+
+.container_search_meals::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.container_not_found {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .container_search_name > div > div {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 90vw;
+    scrollbar-width: thin;
+    scrollbar-color: #a67b67 #f1f1f1;
+    margin-bottom: 10px;
+  }
+  .container_search_name > div > div::-webkit-scrollbar {
+    width: 12px;
+  }
+  .container_search_name > div > div::-webkit-scrollbar-thumb {
+    background-color: #a67b67;
+    border-radius: 5px;
+  }
+  .container_search_name > div > div::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+}
