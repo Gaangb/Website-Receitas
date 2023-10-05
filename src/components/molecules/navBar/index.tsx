@@ -18,7 +18,7 @@ export function NavBar(){
     }
 
     function handleNavigateToSearchByIngredient(){
-        navigate('/search_bingredient')
+        navigate('/search_by_ingredient')
     }
 
     return(
