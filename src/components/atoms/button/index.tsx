@@ -7,5 +7,7 @@ interface ButtonProps {
 }
 
 export function Button({ text, customClass, onClick }: ButtonProps) {
-  return <button onClick={onClick} className={`${styles}.${customClass}`}>{text}</button>;
+  const buttonClasses = customClass ? styles[customClass] : '';
+
+  return <button onClick={onClick} className={`${styles.button} ${buttonClasses}`}>{text}</button>;
 }
