@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Input } from "../../components/atoms/input";
 import styles from "./searchName.module.css";
-import image from "../../assets/search_name_image.webp";
+import image from "../../assets/search_name_image2.png";
 import { SearchRecipeCard } from "../../components/molecules/searchRecipeCard";
 
 export function SearchName() {
+  const navigate = useNavigate();
   const [recipeName, setRecipeName] = useState("");
-  const [recipesFinded, setRecipesFinded] = useState([]);
+  const [recipesFound, setRecipesFound] = useState([]);
 
   async function handleSearch() {
     try {
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`
       );
-      setRecipesFinded(response.data.meals);
-      console.log(recipesFinded);
+      setRecipesFound(response.data.meals);
+      console.log(recipesFound);
     } catch (error) {
       console.log(error);
     }
+  }
+
+  function handleNavigateToRecipeScreen(id: number) {
+    navigate(`/recipe_by_id/${id}`)
   }
 
   useEffect(() => {
@@ -39,20 +45,24 @@ export function SearchName() {
           />
         </div>
         <div className={styles.container_search_meals}>
-          {recipesFinded ? (
-            recipesFinded.map((recipe: any) => (
-              <SearchRecipeCard
-                titulo={recipe.strMeal}
-                image={recipe.strMealThumb}
-                key={recipe.idMeal}
-              />
+          {recipesFound ? (
+            recipesFound.map((recipe: any) => (
+              <button className={styles.button_searchName} onClick={() => handleNavigateToRecipeScreen(recipe.idMeal)}>
+                <SearchRecipeCard
+                  titulo={recipe.strMeal}
+                  image={recipe.strMealThumb}
+                  key={recipe.idMeal}
+                />
+              </button>
             ))
           ) : (
-            <p>Não foi encontrada nenhuma receita.</p>
+            <div className={styles.container_not_found}>
+              <p>Não foi encontrada nenhuma receita.</p>
+            </div>
           )}
         </div>
       </div>
-      <div>
+      <div className={styles.search_name_image}>
         <img src={image} alt="" />
       </div>
     </div>
