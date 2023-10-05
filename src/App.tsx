@@ -10,7 +10,7 @@ import { RecipeScreen } from "./screens/recipeScreen";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container_app_geral}">
         <NavBar />
         <div>
           <Routes>
