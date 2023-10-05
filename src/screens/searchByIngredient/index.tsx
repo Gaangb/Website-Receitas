@@ -8,15 +8,15 @@ import { Button } from "../../components/atoms/button";
 
 export function SearchByIngredient() {
   const [recipeIngredient, setRecipeIngredient] = useState("");
-  const [recipesFinded, setRecipesFinded] = useState([]);
-  const [ingredientsFinded, setIngredientsFinded] =useState([])
+  const [recipesFound, setRecipesFound] = useState([]);
+  const [ingredientsFound, setIngredientsFound] =useState([])
 
   async function handleSearch() {
     try {
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/filter.php?i=${recipeIngredient}`
       );
-      setRecipesFinded(response.data.meals);
+      setRecipesFound(response.data.meals);
     } catch (error) {
       console.log(error);
     }
@@ -27,8 +27,8 @@ export function SearchByIngredient() {
       const response = await axios.get(
         'https://www.themealdb.com/api/json/v1/1/list.php?i=list'
       );
-      setIngredientsFinded(response.data.meals)
-      console.log(ingredientsFinded)
+      setIngredientsFound(response.data.meals)
+      console.log(ingredientsFound)
     } catch (error) {
       console.log(error)
     }
@@ -53,8 +53,8 @@ export function SearchByIngredient() {
           />
         </div>
         <div className={styles.container_search_meals}>
-          {recipesFinded ? (
-            recipesFinded.map((recipe: any) => (
+          {recipesFound ? (
+            recipesFound.map((recipe: any) => (
               <SearchRecipeCard
                 titulo={recipe.strMeal}
                 image={recipe.strMealThumb}
@@ -62,7 +62,7 @@ export function SearchByIngredient() {
               />
             ))
           ) : (
-            // ingredientsFinded.map((ingredient: any) => (
+            // ingredientsFound.map((ingredient: any) => (
             //   <Button text={ingredient} onClick={() => setRecipeIngredient(ingredient)} />
             // ))
             // <p>Não foi encontrada nenhuma receita.</p>
