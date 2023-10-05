@@ -60,14 +60,34 @@
   margin-bottom: 2vh;
 }
 
-/* .button_searchName:hover{
-  border: none;
-} */
-
 .container_not_found {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
+}
+
+@media (max-width:768px) {
+  .container_geral_search_name{
+    background: url("../../assets/search_name_image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 100vh;
+  }
+  .container_search_name{
+    padding: 1rem;
+    align-items: center;
+  }
+  .container_search_name > div:first-of-type {
+    width: 90%;
+  }
+  .search_name_image{
+    display: none;
+  }
+  .container_search_meals{
+    max-width: 80vw;
+  }
 }

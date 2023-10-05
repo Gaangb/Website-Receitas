@@ -75,3 +75,23 @@
   align-items: center;
   font-size: 30px;
 }
+
+@media (max-width: 768px) {
+  .container_search_name{
+    background: url('../../assets/search_ingredient_image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+  }
+  .search_ingredient_image{
+    display: none;
+  }
+  .container_search_meals{
+    max-width: 90vw;
+    margin-right: 1rem;
+  }
+}
