@@ -38,3 +38,9 @@
     width: 100%;
     border-radius: 0 0 5px 5px
 }
+
+@media (max-width: 768px) {
+    .container_search_recipe_card{
+        max-width: 20vw;
+    }
+}
