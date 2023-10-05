@@ -53,3 +53,27 @@
   align-items: center;
   font-size: 30px;
 }
+
+@media (max-width: 768px) {
+  .container_search_name > div > div{
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 90vw;
+    scrollbar-width: thin;
+    scrollbar-color: #a67b67 #f1f1f1;
+    margin-bottom: 10px;
+  }
+  .container_search_name > div > div::-webkit-scrollbar {
+    width: 12px;
+
+  }
+  .container_search_name > div > div::-webkit-scrollbar-thumb {
+    background-color: #a67b67;
+    border-radius: 5px;
+  }
+  .container_search_name > div > div::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+}
