@@ -75,9 +75,6 @@ export function Home() {
           />
         </div>
       </div>
-      <div className={styles.image_homeWrapper}>
-        <img src={image} className={styles.image_home} />
-      </div>
     </div>
   );
 }

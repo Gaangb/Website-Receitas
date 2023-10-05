@@ -1,20 +1,25 @@
-.container_input{
-    background-color: #9e6946;
-    width: 50vw;
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+.container_input {
+  background-color: black;
+  max-width: 70vw;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #a67b67;
 }
 
-.input_search_name{
-    width: 100%;
-    background-color: #9e6946;
-    outline: none;
-    border: none;
-    color: white;
+.container_input:last-child {
+  color: white;
+}
+
+.input_search_name {
+  width: 100%;
+  background-color: black;
+  outline: none;
+  border: none;
+  color: black;
 }
 
 input::placeholder {
-    color: white;
-  }
+  color: white;
+}

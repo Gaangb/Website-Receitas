@@ -1,9 +1,16 @@
 .container_home{
+    background: url("../../assets/background.png");
     max-width: 100vw;
     display: flex;
     justify-content: space-between;
     color: #342316;
     font-size: 20px;
+    background-size: cover; /* Ajusta a imagem para cobrir todo o espaço disponível */
+    background-repeat: no-repeat; /* Evita que a imagem seja repetida */
+    background-attachment: fixed; /* Fixa a imagem de fundo para que ela não role com a página */
+    background-position: center center; 
+    height: 100%;
+    color: white;
 }
 
 .card_home{
@@ -23,6 +30,11 @@
 
 .card_home > div > h3{
     margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card_home > div > h2{
+    font-family: 'Playfair Display', serif;
 }
 
 .container_home_recipe {

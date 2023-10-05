@@ -5,12 +5,14 @@
     align-items: center;
     padding: 20px;
     margin: auto;
-    background-color: #342316;
+    background-color: black;
     height: 2vh;
 }
 
 .container_NabBar > div > h1 {
     background-color: transparent;
+    font-size: 20px;
+    color: white;
 }
 
 

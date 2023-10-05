@@ -17,10 +17,10 @@
 .texto_receita {
   width: 100%;
   text-align: left;
-  color: #342316;
+  color: white;
   overflow-y: hidden;
   overflow-x: hidden;
-  border-left: #8a472b 2px solid;
+  border-left: white 2px solid;
 }
 
 .texto_receita::-webkit-scrollbar {
@@ -32,12 +32,12 @@
 }
 
 .texto_receita::-webkit-scrollbar-thumb {
-  background-color: #8a472b;
+  background-color: white;
   border-radius: 5px;
 }
 
 .texto_receita::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: white;
   border-radius: 5px;
 }
 
@@ -64,6 +64,7 @@
 
 .texto_receita > p{
   padding-left: 16px;
+  margin-bottom: 10px;
 }
 
 .texto_receita > ul {
