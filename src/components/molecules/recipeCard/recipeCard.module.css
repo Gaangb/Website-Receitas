@@ -14,7 +14,7 @@
   height: 40vh;
 }
 
-.texto_receita {
+.recipe_text {
   width: 100%;
   text-align: left;
   color: white;
@@ -23,54 +23,73 @@
   border-left: white 2px solid;
 }
 
-.texto_receita::-webkit-scrollbar {
+.recipe_text::-webkit-scrollbar {
   width: 12px;
 }
 
-.imagem_ingredientes {
+.ingredient_image {
   display: flex;
 }
 
-.texto_receita::-webkit-scrollbar-thumb {
+.recipe_text::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 5px;
 }
 
-.texto_receita::-webkit-scrollbar-track {
+.recipe_text::-webkit-scrollbar-track {
   background-color: white;
   border-radius: 5px;
 }
 
-.imagem_receita > img {
+.recipe_image > img {
   width: 20vw;
   border-radius: 6px;
   max-height: 40vh;
   padding-right: 16px;
 }
 
-.titulo_receita {
+.recipe_title {
   font-weight: bold;
   text-align: center;
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-.texto_receita > ul > li {
+.recipe_text > ul > li {
 
   list-style: none;
   margin-bottom: 4px;
   font-size: 14px;
 }
 
-.texto_receita > p{
+.recipe_text > p{
   padding-left: 16px;
   margin-bottom: 10px;
 }
 
-.texto_receita > ul {
+.recipe_text > ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   max-height: 25vh;
   padding: 10px 16px 0px 16px;
+}
+
+
+@media (max-width: 768px) {
+  .container_recipeCard{
+    width: 80vw;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+  }
+  .recipe_image > img {
+    width: 60vw;
+    border-radius: 6px;
+    max-height: 40vh;
+    padding-right: 16px;
+  }
+  .ingredient_image{
+    flex-direction: column;
+  }
 }
