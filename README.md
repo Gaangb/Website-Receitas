@@ -25,7 +25,7 @@ Você pode ver uma demonstração ao vivo do projeto [aqui]([link-para-a-demo](h
 
 ## Tecnologias
 
-- React
+- React + TypeScript
 - Vite
 - [TheMealDB API](https://www.themealdb.com/api.php)
 
