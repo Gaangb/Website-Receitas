@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./NavBar.module.css";
+import styles from "./navBar.module.css";
 import { Button } from "../../atoms/button";
 
 export function NavBar() {
